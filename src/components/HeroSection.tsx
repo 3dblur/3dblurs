@@ -92,12 +92,12 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-500 flex flex-wrap justify-center gap-6 mt-12">
-            <Button className="ios-cosmic-button primary">
-              <span>
-                <Code size={18} />
-                  Register Now
-              </span>
-            </Button>
+            <Button 
+              effect="neon"
+              variant="primary"
+            >
+                              REGISTER NOW
+          </Button>
             <button className="ios-cosmic-button secondary">
               <span>Learn More</span>
             </button>
