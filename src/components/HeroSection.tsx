@@ -107,22 +107,22 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-         <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
+        <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
   {/* For screens wider than phones (sm:576px and up) */}
-  <h1 className="hidden sm:block text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white whitespace-nowrap">
+  <h1 className="hidden sm:block text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white whitespace-nowrap text-center">
     THE WORLD'S LARGEST
   </h1>
   
   {/* For phone screens only */}
-  <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
+  <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white text-center">
     THE WORLD'S
   </h1>
-  <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
+  <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white text-center">
     LARGEST
   </h1>
   
   {/* Hackathon text remains unchanged */}
-  <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white">
+  <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white text-center">
     HACKATHON
   </h1>
 </div>
