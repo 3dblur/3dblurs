@@ -106,27 +106,50 @@ const HeroSection: React.FC = () => {
               <Code size={14} className="inline mr-2" /> INNOVATORS PATH
             </div>
           </div>
-          
-       <div className="w-full mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
-  {/* For screens wider than phones (sm:576px and up) */}
-  <h1 className="hidden sm:block text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white whitespace-nowrap text-center mx-auto">
-    THE WORLD'S LARGEST
-  </h1>
-  
-  {/* For phone screens only */}
-  <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white text-center mx-auto">
-    THE WORLD'S
-  </h1>
-  <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white text-center mx-auto">
-    LARGEST
-  </h1>
-  
-  {/* Hackathon text remains unchanged */}
-  <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white text-center mx-auto">
-    HACKATHON
-  </h1>
+         
+  /*   
+
+
+
+  <div className="w-full mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
+  {/* Add a custom media query for the problematic breakpoint */}
+  <style jsx>{`
+    @media (min-width: 1124px) {
+      .heading-container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+    }
+  `}</style>
+
+  <div className="heading-container">
+    {/* For screens wider than phones (sm:576px and up) */}
+    <h1 className="hidden sm:block text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white whitespace-nowrap text-center">
+      THE WORLD'S LARGEST
+    </h1>
+    
+    {/* For phone screens only */}
+    <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white text-center">
+      THE WORLD'S
+    </h1>
+    <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white text-center">
+      LARGEST
+    </h1>
+    
+    {/* Hackathon text remains unchanged */}
+    <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white text-center">
+      HACKATHON
+    </h1>
+  </div>
 </div>
-          
+
+
+
+       */   
           <div className="screen-border p-8 inline-block max-w-2xl animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-300 my-6">
             <span></span>
             <h2 className="text-lg md:text-xl font-cinzel text-[#0077FF] mb-6">
