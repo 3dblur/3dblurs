@@ -25,7 +25,7 @@ const Button = ({
     secondary: "bg-white/10 text-white hover:bg-white/20 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     outline: "bg-transparent border border-white/20 text-white hover:border-white/40 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     ghost: "bg-transparent text-white hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
-    terminal: "bg-transparent border border-[#0077FF]/40 text-[#0077FF] hover:border-[#0077FF]/80 hover:text-[#0077FF] focus:ring-2 focus:ring-[#0077FF]/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
+    terminal: "bg-transparent backdrop-blur-sm text-[#0077FF] hover:text-white border border-[#0077FF]/40 hover:border-[#0077FF]/80 focus:ring-2 focus:ring-[#0077FF]/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
   };
   
   const sizeStyles = {

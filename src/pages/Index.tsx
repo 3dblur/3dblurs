@@ -118,15 +118,18 @@ const Index = () => {
       {/* Sci-fi scan line effect */}
       <div className="scan-line" />
       
+      {/* Noise overlay */}
+      <div className="noise-overlay" />
+      
       {bootSequence < 100 ? (
         <div className="fixed inset-0 bg-hackathon-dark z-50 flex flex-col items-center justify-center p-8 bg-gradient-blue">
           <div className="max-w-md w-full mx-auto">
             <div className="terminal-text text-xl mb-8 flex items-center justify-center">
               <TerminalSquare className="mr-3 text-[#0077FF]" size={24} />
-              <span className="text-white font-display tracking-wider">HACKATHON.DEV OS</span>
+              <span className="text-white tracking-widest">HACKATHON.DEV OS</span>
             </div>
             
-            <div className="terminal-text text-sm mb-6 text-center">INITIALIZING SYSTEM...</div>
+            <div className="terminal-text text-sm mb-6 text-center tracking-wider">INITIALIZING SYSTEM...</div>
             
             <div className="w-full bg-black/30 border border-[#0077FF]/30 p-1.5 rounded-sm mb-6 overflow-hidden">
               <div 
@@ -191,7 +194,7 @@ const Index = () => {
           <Footer />
           
           {/* Grid decorations with reduced opacity - placed behind content */}
-          <div className="fixed top-0 left-0 w-full h-screen grid-lines pointer-events-none z-[-1] opacity-30"></div>
+          <div className="fixed top-0 left-0 w-full h-screen grid-lines pointer-events-none z-[-1] opacity-20"></div>
           
           {/* Edge decorations */}
           <div className="fixed top-4 left-4 border-l-2 border-t-2 border-[#0077FF]/30 w-16 h-16 pointer-events-none"></div>

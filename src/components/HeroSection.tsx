@@ -1,12 +1,15 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { Calendar, MapPin, Zap, Code, Globe, Rocket } from "lucide-react";
+import { Calendar, MapPin, Zap, Code, Globe, Rocket, Activity, Award, Users, Target } from "lucide-react";
 import Button from "./ui-custom/Button";
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [typewriterText, setTypewriterText] = useState("");
   const fullText = "AWAITS YOUR CODE";
+  
+  // Stats animation
+  const [activeStatIndex, setActiveStatIndex] = useState<number | null>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -91,40 +94,42 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-500 flex flex-wrap justify-center gap-6 mt-12">
-            <Button variant="terminal" size="lg">
+            <Button variant="terminal" size="lg" className="glow-button">
               REGISTER NOW
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="glow-button">
               LEARN MORE
             </Button>
           </div>
 
-          {/* Technical Information Card */}
-          <div className="mt-28 mb-10 glass-panel p-6 max-w-3xl mx-auto animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-600">
-            <div className="grid grid-cols-2 gap-y-8 gap-x-4">
-              <div className="text-left">
-                <div className="font-mono text-xs text-[#0077FF] mb-1">STATS:</div>
-                <div className="grid grid-cols-1 gap-y-4">
-                  {leftStats.map((stat, index) => (
-                    <div key={index} className="font-mono text-xs">
-                      <div className="text-[#0077FF]/80">{stat.label}</div>
-                      <div className="text-white">{stat.value}</div>
+          {/* Enhanced Stats Panel */}
+          <div className="mt-28 mb-10 glass-panel p-8 max-w-4xl mx-auto animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-600 border border-[#0077FF]/20">
+            <h3 className="text-xl font-cinzel text-white mb-8 tracking-wider">HACKATHON METRICS</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {statsData.map((stat, index) => (
+                <div 
+                  key={index} 
+                  className="text-center transition-all duration-300 hover:scale-105"
+                  onMouseEnter={() => setActiveStatIndex(index)}
+                  onMouseLeave={() => setActiveStatIndex(null)}
+                >
+                  <div className={`w-12 h-12 flex items-center justify-center mx-auto mb-4 rounded-full transition-all duration-300 ${activeStatIndex === index ? 'bg-[#0077FF]/30 scale-110' : 'bg-[#0077FF]/10'}`}>
+                    {React.createElement(stat.icon, { size: 20, className: "text-[#0077FF]" })}
+                  </div>
+                  <div className="font-mono text-xs text-[#0077FF]">{stat.label}</div>
+                  <div className="text-white font-mono text-xl mt-1">{stat.value}</div>
+                  {stat.rating && (
+                    <div className="mt-2 flex justify-center">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <div 
+                          key={i} 
+                          className={`w-3 h-3 mx-0.5 ${i < stat.rating ? 'bg-[#0077FF]' : 'bg-white/10'}`}
+                        ></div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
-              
-              <div className="text-left">
-                <div className="font-mono text-xs text-[#0077FF] mb-1">METRICS:</div>
-                <div className="grid grid-cols-1 gap-y-4">
-                  {rightStats.map((stat, index) => (
-                    <div key={index} className="font-mono text-xs">
-                      <div className="text-[#0077FF]/80">{stat.label}</div>
-                      <div className="text-white">{stat.value}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -169,18 +174,50 @@ const HeroSection: React.FC = () => {
   );
 };
 
-const leftStats = [
-  { label: "LOCATION:", value: "VIRTUAL SPACE" },
-  { label: "PRIZE POOL:", value: "$1,000,000+" },
-  { label: "PARTICIPANTS:", value: "UNLIMITED" },
-  { label: "DIFFICULTY:", value: "⬛⬛⬛⬛⬜" }
-];
-
-const rightStats = [
-  { label: "INNOVATORS:", value: "10,000+" },
-  { label: "CHALLENGES:", value: "50+" },
-  { label: "SPONSORS:", value: "30+" },
-  { label: "COMMITMENT:", value: "⬛⬛⬛⬜⬜" }
+const statsData = [
+  { 
+    label: "LOCATION", 
+    value: "VIRTUAL SPACE",
+    icon: Globe
+  },
+  { 
+    label: "PRIZE POOL", 
+    value: "$1,000,000+",
+    icon: Award
+  },
+  { 
+    label: "PARTICIPANTS", 
+    value: "UNLIMITED",
+    icon: Users,
+    rating: 4
+  },
+  { 
+    label: "DIFFICULTY", 
+    value: "⬛⬛⬛⬛⬜",
+    icon: Target,
+    rating: 4
+  },
+  { 
+    label: "INNOVATORS", 
+    value: "10,000+",
+    icon: Zap
+  },
+  { 
+    label: "CHALLENGES", 
+    value: "50+",
+    icon: Code
+  },
+  { 
+    label: "SPONSORS", 
+    value: "30+",
+    icon: Rocket
+  },
+  { 
+    label: "COMMITMENT", 
+    value: "⬛⬛⬛⬜⬜",
+    icon: Activity,
+    rating: 3
+  }
 ];
 
 export default HeroSection;
