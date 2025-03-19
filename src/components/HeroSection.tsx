@@ -94,10 +94,10 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-500 flex flex-wrap justify-center gap-6 mt-12">
-            <Button variant="terminal" size="lg" className="glow-button">
+            <Button variant="cyber" size="lg" className="pixel-font">
               REGISTER NOW
             </Button>
-            <Button variant="outline" size="lg" className="glow-button">
+            <Button variant="cyber" size="lg" className="pixel-font">
               LEARN MORE
             </Button>
           </div>

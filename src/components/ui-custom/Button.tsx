@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "terminal";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "terminal" | "cyber";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
   className?: string;
@@ -26,12 +26,13 @@ const Button = ({
     outline: "bg-transparent border border-white/20 text-white hover:border-white/40 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     ghost: "bg-transparent text-white hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     terminal: "bg-transparent backdrop-blur-sm text-[#0077FF] hover:text-white border border-[#0077FF]/40 hover:border-[#0077FF]/80 focus:ring-2 focus:ring-[#0077FF]/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
+    cyber: "bg-[#222222] text-white hover:text-white border-0 focus:outline-none hover:scale-[1.03] active:scale-[0.98] cyber-button",
   };
   
   const sizeStyles = {
     sm: "text-xs px-3 py-1.5 rounded-sm",
-    md: "text-sm px-5 py-2 rounded-sm",
-    lg: "text-base px-8 py-3 rounded-sm",
+    md: "text-sm px-5 py-2 rounded-lg",
+    lg: "text-base px-8 py-3 rounded-lg",
   };
   
   return (

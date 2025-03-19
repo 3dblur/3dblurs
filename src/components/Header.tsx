@@ -39,13 +39,13 @@ const Header: React.FC = () => {
             <a 
               key={index}
               href={item.href} 
-              className="text-hackathon-light/80 hover:text-white transition-all duration-200 text-sm relative group font-future tracking-wide"
+              className="font-mono text-hackathon-light/80 hover:text-white transition-all duration-200 text-sm relative group tracking-wide"
             >
               <span>{item.label}</span>
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-hackathon-accent group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
-          <Button variant="terminal" size="sm" className="glow-button">
+          <Button variant="cyber" size="sm">
             Register
           </Button>
         </nav>
@@ -76,13 +76,13 @@ const Header: React.FC = () => {
                 <a 
                   key={index}
                   href={item.href} 
-                  className="text-lg text-hackathon-light/80 hover:text-white transition-colors duration-200 tracking-wider font-future"
+                  className="font-mono text-lg text-hackathon-light/80 hover:text-white transition-colors duration-200 tracking-wider"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button variant="terminal" onClick={() => setIsMenuOpen(false)} className="glow-button">
+              <Button variant="cyber" onClick={() => setIsMenuOpen(false)}>
                 Register
               </Button>
             </nav>
