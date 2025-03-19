@@ -57,10 +57,10 @@ const HeroSection: React.FC = () => {
           
           <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
-              WHICH WORLD
+              THE WORLD'S LARGEST
             </h1>
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white">
-              CALLS TO YOU?
+              HACKATHON
             </h1>
           </div>
           
@@ -101,7 +101,6 @@ const HeroSection: React.FC = () => {
             </Button>
           </div>
 
-          {/* Enhanced Stats Panel */}
           <div className="mt-28 mb-10 glass-panel p-8 max-w-4xl mx-auto animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-600 border border-[#0077FF]/20">
             <h3 className="text-xl font-cinzel text-white mb-8 tracking-wider">HACKATHON METRICS</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -140,7 +139,6 @@ const HeroSection: React.FC = () => {
                 className="w-full h-full object-cover"
               />
               
-              {/* Radar scanning effect */}
               <div className="absolute inset-0 border-2 border-[#0077FF]/20 rounded-full"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-3/4 h-3/4 border border-[#0077FF]/40 rounded-full animate-pulse-slow"></div>
@@ -153,7 +151,6 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Data points around the globe */}
             <div className="absolute top-1/4 -left-2 text-[8px] font-mono text-[#0077FF]/70">DATA POINT A</div>
             <div className="absolute bottom-1/4 -right-2 text-[8px] font-mono text-[#0077FF]/70">DATA POINT B</div>
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-[8px] font-mono text-[#0077FF]/70">ORIGIN POINT</div>
@@ -161,7 +158,6 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      {/* Repositioned scroll indicator - moved lower and center-aligned */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <a href="#about" className="flex flex-col items-center text-[#0077FF]/60 hover:text-[#0077FF] transition-colors duration-200">
           <span className="text-sm mb-2 font-mono">SCROLL</span>
