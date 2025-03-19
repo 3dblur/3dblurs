@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { Calendar, MapPin, Zap, Code, Globe, Rocket, Activity, Award, Users, Target } from "lucide-react";
 import Button from "./ui-custom/Button";
@@ -156,7 +157,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+      <div className="absolute bottom-4 left-0 right-0 mx-auto flex justify-center animate-bounce z-10 w-fit">
         <a href="#about" className="flex flex-col items-center text-[#0077FF]/60 hover:text-[#0077FF] transition-colors duration-200">
           <span className="text-sm mb-2 font-mono">SCROLL</span>
           <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
