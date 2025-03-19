@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Calendar, MapPin, Zap, Code, Globe, Rocket, Activity, Award, Users, Target } from "lucide-react";
 import Button from "./ui-custom/Button";
@@ -94,10 +93,10 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-500 flex flex-wrap justify-center gap-6 mt-12">
-            <Button variant="cyber" size="lg" className="pixel-font">
+            <Button variant="cyber" size="lg" className="font-mono text-xs tracking-wider">
               REGISTER NOW
             </Button>
-            <Button variant="cyber" size="lg" className="pixel-font">
+            <Button variant="cyber" size="lg" className="font-mono text-xs tracking-wider">
               LEARN MORE
             </Button>
           </div>

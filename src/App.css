@@ -117,3 +117,37 @@
   pointer-events: none;
   z-index: 0;
 }
+
+/* New styles for the depth effect button */
+.depth-button {
+  background-color: #222222;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  border: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  box-shadow: 
+    0 6px 10px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 0, 0, 0.3) inset;
+  transition: all 0.2s ease;
+}
+
+.depth-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 8px 15px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+.depth-button:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(0, 0, 0, 0.3) inset;
+}
+
