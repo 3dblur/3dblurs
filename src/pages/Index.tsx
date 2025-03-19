@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
@@ -118,9 +117,6 @@ const Index = () => {
       {/* Sci-fi scan line effect */}
       <div className="scan-line" />
       
-      {/* Noise overlay */}
-      <div className="noise-overlay" />
-      
       {bootSequence < 100 ? (
         <div className="fixed inset-0 bg-hackathon-dark z-50 flex flex-col items-center justify-center p-8 bg-gradient-blue">
           <div className="max-w-md w-full mx-auto">
@@ -185,7 +181,9 @@ const Index = () => {
         <div className="min-h-screen flex flex-col overflow-x-hidden">
           <StarryBackground />
           <Header />
-          <main>
+          <main className="relative before:absolute before:top-0 before:left-0 before:w-full 
+                           before:h-full before:content-[''] before:opacity-[0.03] before:z-10 
+                           before:pointer-events-none before:bg-[url('https://res.cloudinary.com/dzl9yxixg/image/upload/noise_yvdidf.gif')]">
             <HeroSection />
             <PrizeSection />
             <SponsorsSection />
