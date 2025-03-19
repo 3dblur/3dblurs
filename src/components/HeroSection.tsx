@@ -7,7 +7,6 @@ const HeroSection: React.FC = () => {
   const [typewriterText, setTypewriterText] = useState("");
   const fullText = "AWAITS YOUR CODE";
   
-  // Stats animation
   const [activeStatIndex, setActiveStatIndex] = useState<number | null>(null);
   
   useEffect(() => {
@@ -31,7 +30,6 @@ const HeroSection: React.FC = () => {
     };
   }, []);
   
-  // Typewriter effect
   useEffect(() => {
     if (typewriterText.length < fullText.length) {
       const timeout = setTimeout(() => {
@@ -189,7 +187,7 @@ const statsData = [
   },
   { 
     label: "DIFFICULTY", 
-    value: "⬛⬛⬛⬛⬜",
+    value: "HIGH",
     icon: Target,
     rating: 4
   },
@@ -210,7 +208,7 @@ const statsData = [
   },
   { 
     label: "COMMITMENT", 
-    value: "⬛⬛⬛⬜⬜",
+    value: "MEDIUM",
     icon: Activity,
     rating: 3
   }
