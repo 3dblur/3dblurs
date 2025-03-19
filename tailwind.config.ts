@@ -22,7 +22,8 @@ export default {
 			fontFamily: {
 				sans: ["Inter", "sans-serif"],
 				display: ["Satoshi", "sans-serif"],
-				mono: ["SF Mono", "monospace"],
+				mono: ["JetBrains Mono", "monospace"],
+				orbitron: ["Orbitron", "sans-serif"],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -31,11 +32,13 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				hackathon: {
-					dark: "#0A0A0B",
+					dark: "#080808",
 					light: "#FAFAFA",
 					accent: "#007AFF",
 					"accent-light": "#60A5FA",
 					muted: "#71717A",
+					"terminal-green": "#87FFDE",
+					"terminal-blue": "#ACF6FF",
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -125,6 +128,14 @@ export default {
 				'shimmer': {
 					'0%': { backgroundPosition: '-1000px 0' },
 					'100%': { backgroundPosition: '1000px 0' }
+				},
+				'scan': {
+					'0%': { transform: 'translateY(-100%)' },
+					'100%': { transform: 'translateY(100%)' }
+				},
+				'grid-flow': {
+					'0%': { backgroundPosition: '0 0' },
+					'100%': { backgroundPosition: '40px 40px' }
 				}
 			},
 			animation: {
@@ -136,7 +147,9 @@ export default {
 				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
 				'twinkle': 'twinkle 3s ease-in-out infinite',
 				'rotate-slow': 'rotate-slow 40s linear infinite',
-				'shimmer': 'shimmer 2s linear infinite'
+				'shimmer': 'shimmer 2s linear infinite',
+				'scan': 'scan 2s linear infinite',
+				'grid-flow': 'grid-flow 20s linear infinite'
 			},
 			backdropFilter: {
 				'none': 'none',
