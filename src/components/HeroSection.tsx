@@ -109,16 +109,17 @@ const HeroSection: React.FC = () => {
           
           <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
             {/* Modified heading with responsive behavior */}
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
-              <span className="hidden md:inline">THE WORLD'S LARGEST</span>
-              <span className="md:hidden">THE WORLD'S</span>
-            </h1>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white md:hidden">
-              LARGEST
-            </h1>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white">
-              HACKATHON
-            </h1>
+             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
+    <span className="md:inline">THE WORLD'S</span>
+    <span className="md:inline hidden sm:inline"> LARGEST</span>
+    <span className="md:hidden inline"> </span>
+  </h1>
+  <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white md:hidden">
+    LARGEST
+  </h1>
+  <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white">
+    HACKATHON
+  </h1>
           </div>
           
           <div className="screen-border p-8 inline-block max-w-2xl animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-300 my-6">
