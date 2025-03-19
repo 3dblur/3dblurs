@@ -43,31 +43,31 @@ const HeroSection: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen pt-32 pb-20 overflow-hidden flex flex-col justify-center"
+      className="relative min-h-screen pt-36 pb-24 overflow-hidden flex flex-col justify-center"
     >
       <div className="container px-6 mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-100">
-            <div className="data-line mb-6">
+            <div className="data-line mb-8">
               <Code size={14} className="inline mr-2" /> INNOVATORS PATH
             </div>
           </div>
           
-          <div className="mb-4 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
+          <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide">
-              <span className="text-gradient">WHICH WORLD</span>
+              <span className="text-white">WHICH WORLD</span>
             </h1>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-2 leading-tight tracking-wide">
-              <span className="text-gradient">CALLS TO YOU?</span>
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide">
+              <span className="text-white">CALLS TO YOU?</span>
             </h1>
           </div>
           
-          <div className="screen-border p-8 inline-block max-w-2xl animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-300">
+          <div className="screen-border p-8 inline-block max-w-2xl animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-300 my-6">
             <span></span>
-            <h2 className="text-lg md:text-xl font-orbitron text-[#0077FF] mb-4">
+            <h2 className="text-lg md:text-xl font-cinzel text-[#0077FF] mb-6">
               <span>FIND YOUR PATH TO A NEW FRONTIER</span>
             </h2>
-            <p className="font-mono text-sm md:text-base text-white/80 mb-4">
+            <p className="font-mono text-sm md:text-base text-white mb-6 leading-relaxed">
               The world's largest virtual hackathon with over $1M in prizes. Where innovation meets opportunity and every line of code can change the future.
             </p>
             <h3 className="font-mono text-sm md:text-base text-[#0077FF]">
@@ -75,22 +75,22 @@ const HeroSection: React.FC = () => {
             </h3>
           </div>
           
-          <div className="mt-12 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-400 flex flex-wrap justify-center gap-6 mb-12">
-            <div className="flex items-center text-sm md:text-base text-white/80 font-mono">
+          <div className="mt-16 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-400 flex flex-wrap justify-center gap-8 mb-14">
+            <div className="flex items-center text-sm md:text-base text-white font-mono">
               <MapPin size={18} className="text-[#0077FF] mr-2" />
               <span>VIRTUAL EVENT</span>
             </div>
-            <div className="flex items-center text-sm md:text-base text-white/80 font-mono">
+            <div className="flex items-center text-sm md:text-base text-white font-mono">
               <Calendar size={18} className="text-[#0077FF] mr-2" />
               <span>DATE: TBD</span>
             </div>
-            <div className="flex items-center text-sm md:text-base text-white/80 font-mono">
+            <div className="flex items-center text-sm md:text-base text-white font-mono">
               <Rocket size={18} className="text-[#0077FF] mr-2" />
               <span>PRIZES: $1M+</span>
             </div>
           </div>
           
-          <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-500 flex flex-wrap justify-center gap-4 mt-10">
+          <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-500 flex flex-wrap justify-center gap-6 mt-12">
             <Button variant="terminal" size="lg">
               REGISTER NOW
             </Button>
@@ -99,7 +99,7 @@ const HeroSection: React.FC = () => {
             </Button>
           </div>
 
-          <div className="mt-24 relative">
+          <div className="mt-28 relative">
             <div className="overflow-hidden rounded-full w-60 h-60 mx-auto relative border border-[#0077FF]/30">
               <img 
                 src="/lovable-uploads/b1622559-709c-4847-a9dd-35b64fa8ce42.png" 
@@ -128,7 +128,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#about" className="flex flex-col items-center text-[#0077FF]/60 hover:text-[#0077FF] transition-colors duration-200">
           <span className="text-sm mb-2 font-mono">SCROLL</span>
           <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">

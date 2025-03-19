@@ -24,6 +24,7 @@ export default {
 				display: ["Satoshi", "sans-serif"],
 				mono: ["JetBrains Mono", "monospace"],
 				orbitron: ["Orbitron", "sans-serif"],
+				cinzel: ["Cinzel", "serif"],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -159,6 +160,12 @@ export default {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-blue': 'linear-gradient(135deg, #040B1B 0%, #0A2155 100%)',
 				'shimmer': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)',
+			},
+			spacing: {
+				'18': '4.5rem',
+				'72': '18rem',
+				'84': '21rem',
+				'96': '24rem',
 			}
 		}
 	},

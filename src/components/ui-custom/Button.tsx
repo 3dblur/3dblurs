@@ -18,14 +18,14 @@ const Button = ({
   isLoading = false,
   ...props
 }: ButtonProps) => {
-  const baseStyles = "relative inline-flex items-center justify-center font-medium transition-all duration-200 ease-in-out focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed uppercase tracking-wider";
+  const baseStyles = "relative inline-flex items-center justify-center font-cinzel transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed uppercase tracking-wider btn-pulse";
   
   const variantStyles = {
-    primary: "bg-hackathon-accent text-white hover:bg-opacity-90 focus:ring-2 focus:ring-hackathon-accent focus:ring-opacity-50",
-    secondary: "bg-white/10 text-white hover:bg-white/20 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50",
-    outline: "bg-transparent border border-white/20 text-white hover:border-white/40 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50",
-    ghost: "bg-transparent text-white hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50",
-    terminal: "bg-transparent border border-[#0077FF]/40 text-[#0077FF] hover:border-[#0077FF]/80 hover:text-[#0077FF] focus:ring-2 focus:ring-[#0077FF]/30 focus:ring-opacity-50",
+    primary: "bg-hackathon-accent text-white hover:bg-opacity-90 focus:ring-2 focus:ring-hackathon-accent focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
+    secondary: "bg-white/10 text-white hover:bg-white/20 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
+    outline: "bg-transparent border border-white/20 text-white hover:border-white/40 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
+    ghost: "bg-transparent text-white hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
+    terminal: "bg-transparent border border-[#0077FF]/40 text-[#0077FF] hover:border-[#0077FF]/80 hover:text-[#0077FF] focus:ring-2 focus:ring-[#0077FF]/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
   };
   
   const sizeStyles = {

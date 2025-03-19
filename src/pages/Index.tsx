@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -10,9 +10,43 @@ import Footer from "@/components/Footer";
 import StarryBackground from "@/components/StarryBackground";
 import { Code, TerminalSquare } from "lucide-react";
 
+// Sample code snippets for the loading screen
+const codeSnippets = [
+  "import { hackathon } from '@cosmos/innovation';",
+  "function initializeHackathon() {",
+  "  const participants = await cosmos.connect();",
+  "  const challenges = await cosmos.fetchChallenges();",
+  "  return { participants, challenges };",
+  "}",
+  "async function distributeRewards(winners) {",
+  "  const prizes = calculatePrizeDistribution(winners);",
+  "  await cosmos.transferRewards(winners, prizes);",
+  "  console.log('Rewards distributed successfully');",
+  "}",
+  "export class Solution {",
+  "  constructor(participant, challenge) {",
+  "    this.participant = participant;",
+  "    this.challenge = challenge;",
+  "    this.timestamp = Date.now();",
+  "  }",
+  "  async submit() {",
+  "    return await cosmos.submitSolution(this);",
+  "  }",
+  "}",
+  "cosmos.on('connect', () => {",
+  "  console.log('Connected to Hackathon network');",
+  "});",
+  "// Initializing virtual environments",
+  "// Setting up distributed computation nodes",
+  "// Establishing secure connections",
+  "// Loading challenge parameters"
+];
+
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-
+  const [bootSequence, setBootSequence] = useState(0);
+  const [codeLines, setCodeLines] = useState<string[]>([]);
+  
   // Smooth scrolling for anchor links
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
@@ -45,20 +79,31 @@ const Index = () => {
     };
   }, []);
 
+  // Code animation for loading screen
+  const addCodeLine = useCallback(() => {
+    if (codeLines.length < codeSnippets.length) {
+      setCodeLines(prev => [...prev, codeSnippets[prev.length]]);
+    }
+  }, [codeLines.length]);
+
   // Terminal boot sequence effect
-  const [bootSequence, setBootSequence] = useState(0);
-  
   useEffect(() => {
     if (!isLoaded) return;
     
     const bootTimer = setTimeout(() => {
       if (bootSequence < 100) {
-        setBootSequence(prev => Math.min(prev + Math.floor(Math.random() * 10) + 5, 100));
+        const increment = Math.min(Math.floor(Math.random() * 8) + 3, 100 - bootSequence);
+        setBootSequence(prev => prev + increment);
+        
+        // Add a new code line every few percent
+        if (bootSequence % 8 === 0 || bootSequence % 9 === 0) {
+          addCodeLine();
+        }
       }
-    }, 100);
+    }, 160);
     
     return () => clearTimeout(bootTimer);
-  }, [bootSequence, isLoaded]);
+  }, [bootSequence, isLoaded, addCodeLine]);
 
   return (
     <>
@@ -75,22 +120,62 @@ const Index = () => {
       
       {bootSequence < 100 ? (
         <div className="fixed inset-0 bg-hackathon-dark z-50 flex flex-col items-center justify-center p-8 bg-gradient-blue">
-          <div className="terminal-text text-xl mb-4 flex items-center">
-            <TerminalSquare className="mr-2 text-[#0077FF]" size={24} />
-            HACKATHON.DEV OS v1.0.0
-          </div>
-          <div className="terminal-text text-sm mb-6">INITIALIZING SYSTEM...</div>
-          <div className="w-full max-w-md bg-black/50 border border-[#0077FF]/30 p-1 rounded-sm mb-6">
-            <div 
-              className="h-2 bg-[#0077FF]/80 rounded-sm transition-all duration-300 ease-in-out"
-              style={{ width: `${bootSequence}%` }}
-            ></div>
-          </div>
-          <div className="flex flex-col gap-1 terminal-text text-xs w-full max-w-md opacity-70">
-            <div>{'>'} Loading core systems... <span className="text-[#5AA6FF]">OK</span></div>
-            <div>{'>'} Connecting to server... <span className="text-[#5AA6FF]">OK</span></div>
-            <div>{'>'} Initializing UI components... <span className="text-[#5AA6FF]">OK</span></div>
-            <div>{'>'} Loading content... {bootSequence < 100 ? <span className="cursor-blink">_</span> : <span className="text-[#5AA6FF]">OK</span>}</div>
+          <div className="max-w-md w-full mx-auto">
+            <div className="terminal-text text-xl mb-6 flex items-center justify-center">
+              <TerminalSquare className="mr-3 text-[#0077FF]" size={24} />
+              <span className="text-white font-cinzel tracking-wider">HACKATHON.DEV OS</span>
+            </div>
+            
+            <div className="terminal-text text-sm mb-5 text-center">INITIALIZING SYSTEM...</div>
+            
+            <div className="w-full bg-black/30 border border-[#0077FF]/30 p-1.5 rounded-sm mb-6 overflow-hidden">
+              <div 
+                className="h-1.5 loader-progress rounded-sm transition-all duration-300 ease-in-out"
+                style={{ width: `${bootSequence}%` }}
+              ></div>
+            </div>
+            
+            <div className="code-animation mb-8 max-h-60 overflow-y-auto scrollbar-none">
+              {codeLines.map((line, index) => (
+                <div 
+                  key={index} 
+                  className="code-line" 
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {line.includes('import') || line.includes('function') || line.includes('class') || line.includes('const') ? 
+                    <span className="loader-highlight">{line}</span> : line
+                  }
+                </div>
+              ))}
+              <div className="code-line cursor-blink">_</div>
+            </div>
+            
+            <div className="flex flex-col gap-1.5 terminal-text text-xs w-full opacity-80">
+              <div className="flex">
+                <span className="w-5 text-[#0077FF] mr-2">{'>'}</span> 
+                <span className="w-40">Loading core systems</span>
+                <span className="text-[#5AA6FF]">OK</span>
+              </div>
+              <div className="flex">
+                <span className="w-5 text-[#0077FF] mr-2">{'>'}</span> 
+                <span className="w-40">Connecting to server</span>
+                <span className="text-[#5AA6FF]">OK</span>
+              </div>
+              <div className="flex">
+                <span className="w-5 text-[#0077FF] mr-2">{'>'}</span> 
+                <span className="w-40">Initializing UI components</span>
+                <span className="text-[#5AA6FF]">OK</span>
+              </div>
+              <div className="flex">
+                <span className="w-5 text-[#0077FF] mr-2">{'>'}</span> 
+                <span className="w-40">Loading content</span>
+                {bootSequence < 100 ? <span className="cursor-blink">_</span> : <span className="text-[#5AA6FF]">OK</span>}
+              </div>
+            </div>
+            
+            <div className="mt-8 text-center text-[#0077FF]/70 text-xs font-mono">
+              {Math.floor(bootSequence)}% COMPLETE
+            </div>
           </div>
         </div>
       ) : (
@@ -103,9 +188,9 @@ const Index = () => {
             <SponsorsSection />
             <JudgesSection />
           </main>
-          <Footer />
+          <Footer className="cosmic-footer" />
           
-          {/* Grid decorations */}
+          {/* Grid decorations with reduced opacity */}
           <div className="fixed top-0 left-0 w-full h-screen grid-lines pointer-events-none"></div>
           
           {/* Edge decorations */}
