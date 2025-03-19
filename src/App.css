@@ -344,3 +344,164 @@
     0 2px 5px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(0, 0, 0, 0.3) inset;
 }
+
+/* iOS-inspired Futuristic Button */
+.ios-cosmic-button {
+  background: linear-gradient(135deg, rgba(0, 119, 255, 0.2), rgba(0, 59, 127, 0.4));
+  border: 1px solid rgba(0, 119, 255, 0.3);
+  border-radius: 28px;
+  padding: 12px 30px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  box-shadow:
+    0 2px 8px rgba(0, 119, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease, transform 0.15s ease;
+  text-align: center;
+  min-width: 140px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Top glossy highlight animation */
+.ios-cosmic-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 50%;
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 35%,
+    rgba(255, 255, 255, 0.4) 65%,
+    rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-15deg);
+  border-radius: 28px 28px 0 0;
+  pointer-events: none;
+  transition: transform 0.8s ease;
+  filter: blur(3px);
+}
+
+/* Edge highlight */
+.ios-cosmic-button::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(0, 119, 255, 0.1) 100%);
+  border-radius: 27px;
+  opacity: 0.6;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover state */
+.ios-cosmic-button:hover {
+  background: linear-gradient(135deg, rgba(0, 140, 255, 0.3), rgba(0, 70, 150, 0.5));
+  box-shadow:
+    0 4px 12px rgba(0, 119, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Animate the highlight on hover */
+.ios-cosmic-button:hover::before {
+  transform: translateX(100%) skewX(-15deg);
+  transition: transform 1.2s ease;
+}
+
+.ios-cosmic-button:hover::after {
+  opacity: 0.8;
+}
+
+/* Active state */
+.ios-cosmic-button:active {
+  background: linear-gradient(135deg, rgba(0, 70, 150, 0.5), rgba(0, 40, 100, 0.6));
+  transform: translateY(1px) scale(0.99);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease;
+}
+
+/* Primary variant */
+.ios-cosmic-button.primary {
+  background: linear-gradient(135deg, #0077FF, #005AC9);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 2px 8px rgba(0, 119, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ios-cosmic-button.primary::before {
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 35%,
+    rgba(255, 255, 255, 0.5) 65%,
+    rgba(255, 255, 255, 0) 100%);
+  filter: blur(3px);
+}
+
+.ios-cosmic-button.primary:hover {
+  background: linear-gradient(135deg, #1A86FF, #0066E0);
+  box-shadow:
+    0 4px 12px rgba(0, 119, 255, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.ios-cosmic-button.primary:active {
+  background: linear-gradient(135deg, #0066E0, #0052B3);
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary variant */
+.ios-cosmic-button.secondary {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+  color: #0077FF;
+  border: 1px solid rgba(0, 119, 255, 0.3);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(0, 119, 255, 0.1);
+}
+
+.ios-cosmic-button.secondary:hover {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 0 1px rgba(0, 119, 255, 0.15);
+}
+
+.ios-cosmic-button.secondary:active {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.3),
+    inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Button content wrapper for proper z-index */
+.ios-cosmic-button span {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
