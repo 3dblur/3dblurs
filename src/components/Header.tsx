@@ -20,41 +20,31 @@ const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "py-4 bg-hackathon-dark/80 backdrop-blur-lg border-b border-white/10"
-          : "py-6 bg-transparent"
+          ? "py-3 bg-hackathon-dark/90 backdrop-blur-md border-b border-white/5"
+          : "py-5 bg-transparent"
       }`}
     >
       <div className="container px-6 mx-auto flex items-center justify-between">
         <a
           href="/"
-          className="text-2xl font-display font-bold text-white flex items-center"
+          className="text-xl font-display font-medium text-white flex items-center"
         >
-          <span className="text-hackathon-accent mr-1">H</span>
-          <span className="animate-fade-in-up" style={{ animationDelay: "100ms" }}>a</span>
-          <span className="animate-fade-in-up" style={{ animationDelay: "150ms" }}>c</span>
-          <span className="animate-fade-in-up" style={{ animationDelay: "200ms" }}>k</span>
-          <span className="animate-fade-in-up" style={{ animationDelay: "250ms" }}>a</span>
-          <span className="animate-fade-in-up" style={{ animationDelay: "300ms" }}>t</span>
-          <span className="animate-fade-in-up" style={{ animationDelay: "350ms" }}>h</span>
-          <span className="animate-fade-in-up" style={{ animationDelay: "400ms" }}>o</span>
-          <span className="animate-fade-in-up" style={{ animationDelay: "450ms" }}>n</span>
+          <span className="text-hackathon-accent mr-1 font-bold">H</span>
+          <span>ackathon</span>
         </a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="text-hackathon-light/80 hover:text-white transition-colors duration-200">
-            About
-          </a>
-          <a href="#prizes" className="text-hackathon-light/80 hover:text-white transition-colors duration-200">
-            Prizes
-          </a>
-          <a href="#sponsors" className="text-hackathon-light/80 hover:text-white transition-colors duration-200">
-            Sponsors
-          </a>
-          <a href="#judges" className="text-hackathon-light/80 hover:text-white transition-colors duration-200">
-            Judges
-          </a>
-          <Button variant="outline" size="sm">
+        <nav className="hidden md:flex items-center space-x-10">
+          {navItems.map((item, index) => (
+            <a 
+              key={index}
+              href={item.href} 
+              className="text-hackathon-light/80 hover:text-white transition-all duration-200 text-sm relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-hackathon-accent hover:after:w-full after:transition-all after:duration-300"
+            >
+              {item.label}
+            </a>
+          ))}
+          <Button variant="terminal" size="sm">
             Register
           </Button>
         </nav>
@@ -81,35 +71,17 @@ const Header: React.FC = () => {
               </button>
             </div>
             <nav className="flex flex-col items-center justify-center flex-grow space-y-8 py-12">
-              <a 
-                href="#about" 
-                className="text-xl text-hackathon-light/80 hover:text-white transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </a>
-              <a 
-                href="#prizes" 
-                className="text-xl text-hackathon-light/80 hover:text-white transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Prizes
-              </a>
-              <a 
-                href="#sponsors" 
-                className="text-xl text-hackathon-light/80 hover:text-white transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sponsors
-              </a>
-              <a 
-                href="#judges" 
-                className="text-xl text-hackathon-light/80 hover:text-white transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Judges
-              </a>
-              <Button variant="outline" onClick={() => setIsMenuOpen(false)}>
+              {navItems.map((item, index) => (
+                <a 
+                  key={index}
+                  href={item.href} 
+                  className="text-lg text-hackathon-light/80 hover:text-white transition-colors duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <Button variant="terminal" onClick={() => setIsMenuOpen(false)}>
                 Register
               </Button>
             </nav>
@@ -119,5 +91,12 @@ const Header: React.FC = () => {
     </header>
   );
 };
+
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Prizes", href: "#prizes" },
+  { label: "Sponsors", href: "#sponsors" },
+  { label: "Judges", href: "#judges" }
+];
 
 export default Header;

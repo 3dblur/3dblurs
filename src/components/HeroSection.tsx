@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
       ref={sectionRef}
       className="relative min-h-screen pt-36 pb-24 overflow-hidden flex flex-col justify-center"
     >
-      <div className="container px-6 mx-auto">
+      <div className="container px-6 mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-100">
             <div className="data-line mb-8">
@@ -54,11 +54,11 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide">
-              <span className="text-white">WHICH WORLD</span>
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
+              WHICH WORLD
             </h1>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide">
-              <span className="text-white">CALLS TO YOU?</span>
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white">
+              CALLS TO YOU?
             </h1>
           </div>
           
@@ -99,7 +99,36 @@ const HeroSection: React.FC = () => {
             </Button>
           </div>
 
-          <div className="mt-28 relative">
+          {/* Technical Information Card */}
+          <div className="mt-28 mb-10 glass-panel p-6 max-w-3xl mx-auto animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-600">
+            <div className="grid grid-cols-2 gap-y-8 gap-x-4">
+              <div className="text-left">
+                <div className="font-mono text-xs text-[#0077FF] mb-1">STATS:</div>
+                <div className="grid grid-cols-1 gap-y-4">
+                  {leftStats.map((stat, index) => (
+                    <div key={index} className="font-mono text-xs">
+                      <div className="text-[#0077FF]/80">{stat.label}</div>
+                      <div className="text-white">{stat.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="text-left">
+                <div className="font-mono text-xs text-[#0077FF] mb-1">METRICS:</div>
+                <div className="grid grid-cols-1 gap-y-4">
+                  {rightStats.map((stat, index) => (
+                    <div key={index} className="font-mono text-xs">
+                      <div className="text-[#0077FF]/80">{stat.label}</div>
+                      <div className="text-white">{stat.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mt-20">
             <div className="overflow-hidden rounded-full w-60 h-60 mx-auto relative border border-[#0077FF]/30">
               <img 
                 src="/lovable-uploads/b1622559-709c-4847-a9dd-35b64fa8ce42.png" 
@@ -136,51 +165,22 @@ const HeroSection: React.FC = () => {
           </svg>
         </a>
       </div>
-      
-      {/* Tech stats */}
-      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-left opacity-70">
-        <div className="font-mono text-[10px] text-[#0077FF] space-y-1">
-          <div className="flex items-center">
-            <span className="w-24">LOCATION:</span>
-            <span>VIRTUAL SPACE</span>
-          </div>
-          <div className="flex items-center">
-            <span className="w-24">PRIZE POOL:</span>
-            <span>$1,000,000+</span>
-          </div>
-          <div className="flex items-center">
-            <span className="w-24">PARTICIPANTS:</span>
-            <span>UNLIMITED</span>
-          </div>
-          <div className="flex items-center">
-            <span className="w-24">DIFFICULTY:</span>
-            <span>⬛⬛⬛⬛⬜</span>
-          </div>
-        </div>
-      </div>
-      
-      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-right opacity-70">
-        <div className="font-mono text-[10px] text-[#0077FF] space-y-1">
-          <div className="flex items-center justify-end">
-            <span className="w-24">INNOVATORS:</span>
-            <span>10,000+</span>
-          </div>
-          <div className="flex items-center justify-end">
-            <span className="w-24">CHALLENGES:</span>
-            <span>50+</span>
-          </div>
-          <div className="flex items-center justify-end">
-            <span className="w-24">SPONSORS:</span>
-            <span>30+</span>
-          </div>
-          <div className="flex items-center justify-end">
-            <span className="w-24">COMMITMENT:</span>
-            <span>⬛⬛⬛⬜⬜</span>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
+
+const leftStats = [
+  { label: "LOCATION:", value: "VIRTUAL SPACE" },
+  { label: "PRIZE POOL:", value: "$1,000,000+" },
+  { label: "PARTICIPANTS:", value: "UNLIMITED" },
+  { label: "DIFFICULTY:", value: "⬛⬛⬛⬛⬜" }
+];
+
+const rightStats = [
+  { label: "INNOVATORS:", value: "10,000+" },
+  { label: "CHALLENGES:", value: "50+" },
+  { label: "SPONSORS:", value: "30+" },
+  { label: "COMMITMENT:", value: "⬛⬛⬛⬜⬜" }
+];
 
 export default HeroSection;

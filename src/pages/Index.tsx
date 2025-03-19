@@ -121,12 +121,12 @@ const Index = () => {
       {bootSequence < 100 ? (
         <div className="fixed inset-0 bg-hackathon-dark z-50 flex flex-col items-center justify-center p-8 bg-gradient-blue">
           <div className="max-w-md w-full mx-auto">
-            <div className="terminal-text text-xl mb-6 flex items-center justify-center">
+            <div className="terminal-text text-xl mb-8 flex items-center justify-center">
               <TerminalSquare className="mr-3 text-[#0077FF]" size={24} />
-              <span className="text-white font-cinzel tracking-wider">HACKATHON.DEV OS</span>
+              <span className="text-white font-display tracking-wider">HACKATHON.DEV OS</span>
             </div>
             
-            <div className="terminal-text text-sm mb-5 text-center">INITIALIZING SYSTEM...</div>
+            <div className="terminal-text text-sm mb-6 text-center">INITIALIZING SYSTEM...</div>
             
             <div className="w-full bg-black/30 border border-[#0077FF]/30 p-1.5 rounded-sm mb-6 overflow-hidden">
               <div 
@@ -135,7 +135,7 @@ const Index = () => {
               ></div>
             </div>
             
-            <div className="code-animation mb-8 max-h-60 overflow-y-auto scrollbar-none">
+            <div className="code-animation mb-8 max-h-60 overflow-y-auto scrollbar-none bg-black/20 rounded-sm border border-[#0077FF]/20">
               {codeLines.map((line, index) => (
                 <div 
                   key={index} 
@@ -150,7 +150,7 @@ const Index = () => {
               <div className="code-line cursor-blink">_</div>
             </div>
             
-            <div className="flex flex-col gap-1.5 terminal-text text-xs w-full opacity-80">
+            <div className="flex flex-col gap-1.5 terminal-text text-xs w-full opacity-80 mb-10">
               <div className="flex">
                 <span className="w-5 text-[#0077FF] mr-2">{'>'}</span> 
                 <span className="w-40">Loading core systems</span>
@@ -173,7 +173,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="mt-8 text-center text-[#0077FF]/70 text-xs font-mono">
+            <div className="text-center text-[#0077FF] text-xs font-mono">
               {Math.floor(bootSequence)}% COMPLETE
             </div>
           </div>
@@ -188,10 +188,10 @@ const Index = () => {
             <SponsorsSection />
             <JudgesSection />
           </main>
-          <Footer className="cosmic-footer" />
+          <Footer />
           
-          {/* Grid decorations with reduced opacity */}
-          <div className="fixed top-0 left-0 w-full h-screen grid-lines pointer-events-none"></div>
+          {/* Grid decorations with reduced opacity - placed behind content */}
+          <div className="fixed top-0 left-0 w-full h-screen grid-lines pointer-events-none z-[-1] opacity-30"></div>
           
           {/* Edge decorations */}
           <div className="fixed top-4 left-4 border-l-2 border-t-2 border-[#0077FF]/30 w-16 h-16 pointer-events-none"></div>

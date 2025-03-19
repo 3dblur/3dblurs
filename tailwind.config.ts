@@ -20,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ["Inter", "sans-serif"],
-				display: ["Satoshi", "sans-serif"],
+				sans: ["SF Pro Display", "Inter", "sans-serif"],
+				display: ["SF Pro Display", "Satoshi", "sans-serif"],
 				mono: ["JetBrains Mono", "monospace"],
 				orbitron: ["Orbitron", "sans-serif"],
 				cinzel: ["Cinzel", "serif"],
