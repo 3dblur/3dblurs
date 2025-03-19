@@ -128,22 +128,32 @@ const HeroSection: React.FC = () => {
 
   <div className="heading-container">
     {/* For screens wider than phones (sm:576px and up) */}
-    <h1 className="hidden sm:block text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white whitespace-nowrap text-center">
-      THE WORLD'S LARGEST
-    </h1>
-    
-    {/* For phone screens only */}
-    <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white text-center">
-      THE WORLD'S
-    </h1>
-    <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white text-center">
-      LARGEST
-    </h1>
-    
-    {/* Hackathon text remains unchanged */}
-    <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white text-center">
-      HACKATHON
-    </h1>
+    <h1 className="hidden lg:block text-4xl xl:text-6xl font-bold leading-tight tracking-wide text-white whitespace-nowrap text-center mx-auto">
+    THE WORLD'S LARGEST
+  </h1>
+  
+  {/* For medium screens (md:768px to lg:1024px) */}
+  <h1 className="hidden md:block lg:hidden text-3xl font-bold leading-tight tracking-wide text-white whitespace-nowrap text-center mx-auto">
+    THE WORLD'S LARGEST
+  </h1>
+  
+  {/* For small screens above phone (sm:576px to md:768px) */}
+  <h1 className="hidden sm:block md:hidden text-2xl font-bold leading-tight tracking-wide text-white whitespace-nowrap text-center mx-auto">
+    THE WORLD'S LARGEST
+  </h1>
+  
+  {/* For phone screens only (below sm:576px) */}
+  <h1 className="sm:hidden text-2xl font-bold leading-tight tracking-wide text-white text-center mx-auto">
+    THE WORLD'S
+  </h1>
+  <h1 className="sm:hidden text-2xl font-bold leading-tight tracking-wide text-white text-center mx-auto">
+    LARGEST
+  </h1>
+  
+  {/* Hackathon text with responsive sizing */}
+  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight tracking-wide text-white text-center mx-auto">
+    HACKATHON
+  </h1>
   </div>
 </div>
 
