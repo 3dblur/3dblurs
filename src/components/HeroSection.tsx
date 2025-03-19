@@ -107,20 +107,25 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
-            {/* Modified heading with responsive behavior */}
-             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
-    <span className="md:inline">THE WORLD'S</span>
-    <span className="md:inline hidden sm:inline"> LARGEST</span>
-    <span className="md:hidden inline"> </span>
+         <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
+  {/* For screens wider than phones (sm:576px and up) */}
+  <h1 className="hidden sm:block text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white whitespace-nowrap">
+    THE WORLD'S LARGEST
   </h1>
-  <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white md:hidden">
+  
+  {/* For phone screens only */}
+  <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
+    THE WORLD'S
+  </h1>
+  <h1 className="sm:hidden text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
     LARGEST
   </h1>
+  
+  {/* Hackathon text remains unchanged */}
   <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white">
     HACKATHON
   </h1>
-          </div>
+</div>
           
           <div className="screen-border p-8 inline-block max-w-2xl animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-300 my-6">
             <span></span>
