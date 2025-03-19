@@ -21,7 +21,7 @@ const Button = ({
   const baseStyles = "relative inline-flex items-center justify-center font-future transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed uppercase tracking-wider";
   
   const variantStyles = {
-    primary: "bg-hackathon-accent text-white hover:bg-opacity-90 focus:ring-2 focus:ring-hackathon-accent focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
+    primary: "bg-gradient-to-r from-[#1f1f1f] to-[#2d2d2d] text-white hover:bg-opacity-90 focus:ring-2 focus:ring-hackathon-accent focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     secondary: "bg-white/10 text-white hover:bg-white/20 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     outline: "bg-transparent border border-white/20 text-white hover:border-white/40 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     ghost: "bg-transparent text-white hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
@@ -42,7 +42,7 @@ const Button = ({
         variantStyles[variant],
         sizeStyles[size],
         isLoading && "opacity-80 cursor-wait",
-        className?.includes("glow-ring") ? "glow-ring-button" : "",
+        variant === "primary" ? "minimal-glow-ring" : "",
         className
       )}
       disabled={isLoading || props.disabled}
