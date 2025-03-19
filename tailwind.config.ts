@@ -32,10 +32,10 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				hackathon: {
-					dark: "#080808",
+					dark: "#040B1B",
 					light: "#FAFAFA",
-					accent: "#007AFF",
-					"accent-light": "#60A5FA",
+					accent: "#0077FF", // Changed to match the image's blue
+					"accent-light": "#5AA6FF", // Lighter blue
 					muted: "#71717A",
 					"terminal-green": "#87FFDE",
 					"terminal-blue": "#ACF6FF",
@@ -157,6 +157,7 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-blue': 'linear-gradient(135deg, #040B1B 0%, #0A2155 100%)',
 				'shimmer': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)',
 			}
 		}

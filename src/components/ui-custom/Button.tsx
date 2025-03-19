@@ -25,7 +25,7 @@ const Button = ({
     secondary: "bg-white/10 text-white hover:bg-white/20 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50",
     outline: "bg-transparent border border-white/20 text-white hover:border-white/40 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50",
     ghost: "bg-transparent text-white hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50",
-    terminal: "bg-transparent border border-[#87FFDE]/40 text-[#87FFDE] hover:border-[#87FFDE]/80 hover:text-[#87FFDE] focus:ring-2 focus:ring-[#87FFDE]/30 focus:ring-opacity-50",
+    terminal: "bg-transparent border border-[#0077FF]/40 text-[#0077FF] hover:border-[#0077FF]/80 hover:text-[#0077FF] focus:ring-2 focus:ring-[#0077FF]/30 focus:ring-opacity-50",
   };
   
   const sizeStyles = {

@@ -96,9 +96,9 @@
 
   body {
     @apply bg-hackathon-dark text-hackathon-light font-sans antialiased;
-    background-color: #080808;
+    background-color: #040B1B;
     background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url('/grid-pattern.png');
     background-size: cover;
     background-position: center;
@@ -120,7 +120,7 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#87FFDE] to-[#ACF6FF];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0077FF] to-[#5AA6FF];
   }
   
   .shimmer-effect {
@@ -142,13 +142,13 @@
 
   .grid-lines {
     background-image: 
-      linear-gradient(to right, rgba(135, 255, 222, 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(135, 255, 222, 0.1) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0, 119, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 119, 255, 0.1) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
   .terminal-text {
-    @apply font-mono text-[#87FFDE] uppercase;
+    @apply font-mono text-[#0077FF] uppercase;
   }
 
   .screen-border {
@@ -160,7 +160,7 @@
   .screen-border > span::before,
   .screen-border > span::after {
     content: '';
-    @apply absolute w-[20px] h-[20px] border-[#87FFDE]/40;
+    @apply absolute w-[20px] h-[20px] border-[#0077FF]/40;
   }
 
   .screen-border::before {
@@ -189,7 +189,7 @@
     background: linear-gradient(
       to bottom,
       transparent 50%,
-      rgba(135, 255, 222, 0.02) 50%
+      rgba(0, 119, 255, 0.02) 50%
     );
     background-size: 100% 4px;
     z-index: 9999;
@@ -206,7 +206,7 @@
     left: -1px;
     right: -1px;
     bottom: -1px;
-    background: linear-gradient(135deg, rgba(135, 255, 222, 0.5) 0%, rgba(135, 255, 222, 0) 50%, rgba(135, 255, 222, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(0, 119, 255, 0.5) 0%, rgba(0, 119, 255, 0) 50%, rgba(0, 119, 255, 0.5) 100%);
     z-index: -1;
     animation: rotate 10s linear infinite;
   }
@@ -250,15 +250,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: #040B1B;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(135, 255, 222, 0.3);
+  background: rgba(0, 119, 255, 0.3);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(135, 255, 222, 0.5);
+  background: rgba(0, 119, 255, 0.5);
 }
 
 /* Earth rotation animation */
@@ -278,15 +278,15 @@
 }
 
 .data-line {
-  @apply font-mono text-xs text-[#87FFDE]/70 flex items-center;
+  @apply font-mono text-xs text-[#0077FF]/70 flex items-center;
 }
 
 .data-line::before {
   content: "";
-  @apply w-8 h-px bg-[#87FFDE]/40 mr-2;
+  @apply w-8 h-px bg-[#0077FF]/40 mr-2;
 }
 
 .data-line::after {
   content: "";
-  @apply w-8 h-px bg-[#87FFDE]/40 ml-2;
+  @apply w-8 h-px bg-[#0077FF]/40 ml-2;
 }
