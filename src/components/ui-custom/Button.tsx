@@ -42,7 +42,7 @@ const Button = ({
         variantStyles[variant],
         sizeStyles[size],
         isLoading && "opacity-80 cursor-wait",
-        className?.includes("glow-ring") ? "glow-button" : "",
+        className?.includes("glow-ring") ? "glow-ring-button" : "",
         className
       )}
       disabled={isLoading || props.disabled}
