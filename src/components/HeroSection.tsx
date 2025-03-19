@@ -107,7 +107,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
          
-  /*   
+    
 
 
 
@@ -159,7 +159,7 @@ const HeroSection: React.FC = () => {
 
 
 
-       */   
+          
           <div className="screen-border p-8 inline-block max-w-2xl animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-300 my-6">
             <span></span>
             <h2 className="text-lg md:text-xl font-cinzel text-[#0077FF] mb-6">
