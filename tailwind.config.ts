@@ -24,7 +24,7 @@ export default {
 				display: ["SF Pro Display", "Satoshi", "sans-serif"],
 				mono: ["JetBrains Mono", "monospace"],
 				orbitron: ["Orbitron", "sans-serif"],
-				cinzel: ["Cinzel", "serif"],
+				future: ["Orbitron", "SF Pro Display", "sans-serif"],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -18,7 +18,7 @@ const Button = ({
   isLoading = false,
   ...props
 }: ButtonProps) => {
-  const baseStyles = "relative inline-flex items-center justify-center font-cinzel transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed uppercase tracking-wider btn-pulse";
+  const baseStyles = "relative inline-flex items-center justify-center font-future transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed uppercase tracking-wider btn-pulse";
   
   const variantStyles = {
     primary: "bg-hackathon-accent text-white hover:bg-opacity-90 focus:ring-2 focus:ring-hackathon-accent focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
