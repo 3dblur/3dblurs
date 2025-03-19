@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="mb-6 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white whitespace-nowrap">
               THE WORLD'S LARGEST
             </h1>
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide text-white">
@@ -92,10 +92,10 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-500 flex flex-wrap justify-center gap-6 mt-12">
-            <Button variant="cyber" size="lg" className="font-mono text-xs tracking-wider">
+            <Button variant="cyber" size="lg" className="font-mono text-xs tracking-wider glow-ring">
               REGISTER NOW
             </Button>
-            <Button variant="cyber" size="lg" className="font-mono text-xs tracking-wider">
+            <Button variant="cyber" size="lg" className="font-mono text-xs tracking-wider glow-ring">
               LEARN MORE
             </Button>
           </div>

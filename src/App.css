@@ -72,11 +72,12 @@
   animation: subtle-pulse 3s infinite ease-in-out;
 }
 
-/* Glow button effects */
+/* Enhanced Glow Button Effects */
 .glow-button {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
 
 .glow-button::before {
@@ -87,22 +88,56 @@
   right: -2px;
   bottom: -2px;
   z-index: -1;
-  background: linear-gradient(90deg, #0077FF, #5AA6FF, #0077FF);
-  background-size: 200% 200%;
-  border-radius: 4px;
-  animation: glow-border 3s ease infinite;
+  background: linear-gradient(90deg, #0077FF, #0EA5E9, #8B5CF6, #F97316, #0077FF);
+  background-size: 400% 400%;
+  border-radius: 1rem;
+  filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: glow-border 8s ease infinite;
+}
+
+.glow-button:hover::before {
+  opacity: 0.8;
+}
+
+.glow-button:active::before {
+  opacity: 0.6;
 }
 
 @keyframes glow-border {
   0% {
     background-position: 0% 50%;
+    transform: rotate(0deg);
   }
   50% {
     background-position: 100% 50%;
+    transform: rotate(180deg);
   }
   100% {
     background-position: 0% 50%;
+    transform: rotate(360deg);
   }
+}
+
+/* Dynamic hover effect with scale */
+.cyber-button {
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cyber-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 10px 20px rgba(0, 119, 255, 0.2),
+    0 6px 6px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(0, 119, 255, 0.1) inset;
+}
+
+.cyber-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(0, 0, 0, 0.3) inset;
 }
 
 /* Noise texture overlay */
@@ -151,3 +186,59 @@
     0 0 0 1px rgba(0, 0, 0, 0.3) inset;
 }
 
+/* Rotating Glow Ring Animation */
+@keyframes ring-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced Button Animation */
+.cyber-button {
+  position: relative;
+  z-index: 1;
+}
+
+.cyber-button::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: conic-gradient(
+    from 0deg,
+    #0077FF,
+    #0EA5E9,
+    #8B5CF6,
+    #F97316,
+    #0077FF
+  );
+  border-radius: 1rem;
+  z-index: -1;
+  animation: ring-rotate 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyber-button:hover::after {
+  opacity: 1;
+  filter: blur(8px);
+}
+
+/* Button click animation */
+@keyframes button-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cyber-button:active {
+  animation: button-click 0.2s ease-in-out;
+}

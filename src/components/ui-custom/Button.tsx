@@ -26,7 +26,7 @@ const Button = ({
     outline: "bg-transparent border border-white/20 text-white hover:border-white/40 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     ghost: "bg-transparent text-white hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
     terminal: "bg-transparent backdrop-blur-sm text-[#0077FF] hover:text-white border border-[#0077FF]/40 hover:border-[#0077FF]/80 focus:ring-2 focus:ring-[#0077FF]/30 focus:ring-opacity-50 hover:scale-[1.03] active:scale-[0.98]",
-    cyber: "bg-[#222222] text-white font-mono text-xs tracking-wider border-0 shadow-[0_6px_10px_rgba(0,0,0,0.55)] hover:shadow-[0_8px_15px_rgba(0,0,0,0.65)] active:shadow-[0_2px_5px_rgba(0,0,0,0.5)] hover:translate-y-[-1px] active:translate-y-[1px] transition-all duration-200",
+    cyber: "bg-[#151515] text-white font-mono text-xs tracking-wider border-0 shadow-[0_6px_10px_rgba(0,0,0,0.55)] hover:shadow-[0_8px_15px_rgba(0,0,0,0.65)] active:shadow-[0_2px_5px_rgba(0,0,0,0.5)] hover:translate-y-[-1px] active:translate-y-[1px] transition-all duration-200 cyber-button",
   };
   
   const sizeStyles = {
@@ -42,6 +42,7 @@ const Button = ({
         variantStyles[variant],
         sizeStyles[size],
         isLoading && "opacity-80 cursor-wait",
+        className?.includes("glow-ring") ? "glow-button" : "",
         className
       )}
       disabled={isLoading || props.disabled}
